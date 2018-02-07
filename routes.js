@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var config = require('./config');
-var jwt = require('express-jwt');
+//var jwt = require('express-jwt');
 // var auth  = jwt({ secret : config.secret , userProperty: 'payload'});
 // var passport = require('./passport');
 var release    = require('./service/release');
@@ -11,8 +11,8 @@ var asset    = require('./service/assets');
 
 module.exports = function(app , passport)
 {
-    app.post('/release', release.create);
-    app.get('/release', release.read);
+    app.post('/release/', release.create);
+    app.get('/release/', release.read);
     app.get('/release/:id', release.single);
     app.put('/release/:id', release.update);
 
