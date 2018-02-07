@@ -39,12 +39,12 @@ app.use(function(req, res, next) {
 app.use(express.static(__dirname + '/client/www'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({
+/*app.use(session({
 	resave: true,
     saveUninitialized: false,
     secret: 'a4f8071f-c873-4447-8ee2',
     store: new mongoStore({url : app.config.mongodb.uri})
-}));
+}));*/
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -54,7 +54,7 @@ require('./passport')(app , passport);
 require('./routes')(app , passport);
 
 
-app.server.listen(process.env.PORT || 8100);
+app.server.listen(process.env.PORT || 8200);
 
 //console.log('Process ' + process.pid + ' is listening to all incoming requests');
 	
