@@ -28,6 +28,15 @@ module.exports = function(app , passport)
     // app.put('/notifications/:id', rent_out.not_put);
     // app.post('/rent_out' ,  rent_out.create);
     // app.get('/rent_out',  rent_out.read);
-
+    app.get('/auth/facebook' , passport.authenticate('facebook'));
+    app.get('/auth/facebook/callback' , passport.authenticate('facebook',{
+        successRedirect : '/release',
+        failureRedirect  : '/'
+    }));
+    app.get('/auth/twitter' , passport.authenticate('twitter'));
+    app.get('/auth/twitter/callback' , passport.authenticate('twitter',{
+    	successRedirect : '/release',
+    	failureRedirect  : '/'
+    }));
 
 };
