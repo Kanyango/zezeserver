@@ -7,9 +7,9 @@ exports.oauth = {
 
 	'facebook' :{
 
-		'clientID'    : '1091247900936084',
-		'clientSecret': '941a60d3455544c0aa1ffbae17d3d95d',
-		'callbackURL' : 'http://localhost:7000/oauth/facebook/callback'
+		'clientID'    : '336654756824204',
+		'clientSecret': '53c80849f1fb2d6f738b2e1d8dc2c7c9',
+		'callbackURL' : 'https://zezeapp.herokuapp.com/release'
 	},
 
 	'twitter' :{
