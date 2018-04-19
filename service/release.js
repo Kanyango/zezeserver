@@ -30,6 +30,7 @@ var release = {
 			release_date : req.body.release_date,
 			c_line 			: req.body.c_line,
 			p_line 			: req.body.p_line,
+			status                  : 'incomplete',
 			production_yr : req.body.production_yr,
 			upc 				: req.body.upc,
 			catalogue_no :req.body.catalogue_no
