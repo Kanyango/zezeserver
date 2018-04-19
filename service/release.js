@@ -19,7 +19,7 @@ var release = {
 		var fieldsToSet = {
 
 			title 			: req.body.title,
-			artwork 		: req.body.artwork,
+			artwork 		: '',
 			subtitle 		: req.body.subtitle,
 			pry_artist 	: req.body.pry_artist,
 			featuring 	: req.body.featuring,
