@@ -157,16 +157,16 @@ var release = {
 												 api_key: '811296612498678',
 												 api_secret: 'j8BV1pcR-Jagxi63jCJSAMrImVM'
 											 });
-											 cloudinary.v2.uploader.upload(pathy,
+											 cloudinary.uploader.upload(pathy,
 												 { resource_type: "video" },
 											 function(error, result) {
 												 console.log('Iam the error',error);
 												 console.log('Iam the result',result);
 												  //var fieldsToSet = { artwork : result.secure_url };
 													var options = { new: true };
-			req.app.db.models.Release.update({_id: id},
-				 { $addToSet: {tracks:  { 'cloud_file': result.secure_url,
-				  												 'original_filename': result.original_filename }
+							req.app.db.models.Release.update({_id: id},
+				 			{ $addToSet: {tracks:  { 'cloud_file': result.secure_url,
+				  			'original_filename': result.original_filename }
 																}
 															}, function(err , docs){
 													if(err)
