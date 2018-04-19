@@ -158,7 +158,7 @@ var release = {
 												 api_secret: 'j8BV1pcR-Jagxi63jCJSAMrImVM'
 											 });
 											 cloudinary.uploader.upload(pathy,
-												 { resource_type: "video" },
+												 //{ resource_type: "video" },
 											 function(error, result) {
 												 console.log('Iam the error',error);
 												 console.log('Iam the result',result);
