@@ -193,6 +193,22 @@ var release = {
 				res.status(200).json(docs);
 			});
 	},
+	statusUpdate : function(req , res , next)
+	{
+		var id = req.params.id;
+		var fieldsToSet = {status : req.body.status };
+		req.app.db.models.Release.findByIdAndUpdate(
+			mongoose.Types.ObjectId(id) , fieldsToSet ,
+			options , function(err , docs){
+				if(err)
+		    	{
+		    		return next(err);
+		    	}
+			 res.status(200).json(docs);
+			});
+		
+		
+	},
 	update : function(req , res , next)
 	{
 		var id = req.params.id;
