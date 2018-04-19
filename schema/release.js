@@ -19,6 +19,7 @@ module.exports = function(app , mongoose){
 		release_date : {type: String},
 		c_line 			: {type: String},
 		p_line 			: {type: String},
+		status        : {type: String},
 		production_yr : {type: String},
 		upc 				: {type: String},
 		catalogue_no : {type: String},
