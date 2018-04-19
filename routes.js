@@ -15,6 +15,7 @@ module.exports = function(app , passport)
     app.get('/release/', release.read);
     app.get('/release/:id', release.single);
     app.put('/release/:id', release.update);
+    app.put('/releastatus/:id', release.statusUpdate);
 
     app.put('/artwork/:id', release.artwork);
 
