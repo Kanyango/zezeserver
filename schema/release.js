@@ -10,7 +10,7 @@ module.exports = function(app , mongoose){
 		artwork 		: {type: String},
 		subtitle 		: {type: String},
 		pry_artist 	: {type: String},
-		featuring 			: [{title: String}],
+		featuring 			: [{feat: String}],
 		genre 			: {type: String},
 		tracks      : [],
 		subgenre 		: {type: String},
