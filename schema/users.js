@@ -14,6 +14,8 @@ module.exports = function(app , mongoose)
 		phone    : String,
 		email    : String,
 		bname    : String,
+		firstname: String,
+		lastname : String,
 	    industry : String,
 	    location : String,
 	    address  : String,
@@ -31,13 +33,8 @@ module.exports = function(app , mongoose)
 			token : String,
 			username  : String,
 			displayName : String
-		},
-		purchases : [{type: mongoose.Schema.Types.ObjectId, ref: 'Purchase'}],
-	    sales : [{type: mongoose.Schema.Types.ObjectId, ref: 'Sales'}],
-	    suppliers : [{type: mongoose.Schema.Types.ObjectId, ref: 'Supplier'}],
-	    customers : [{type: mongoose.Schema.Types.ObjectId, ref: 'Customer'}],
-	    expenses : [{type: mongoose.Schema.Types.ObjectId, ref: 'Expenses'}],
-	    product : [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}]
+		}
+	
 	});	
 	userSchema.methods.setPassword = function(password){
 
