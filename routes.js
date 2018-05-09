@@ -7,7 +7,7 @@ var config = require('./config');
 // var passport = require('./passport');
 var release    = require('./service/release');
 var asset    = require('./service/assets');
-
+var user     = require('./server/service/users');
 
 module.exports = function(app , passport)
 {
@@ -29,6 +29,12 @@ module.exports = function(app , passport)
     // app.put('/notifications/:id', rent_out.not_put);
     // app.post('/rent_out' ,  rent_out.create);
     // app.get('/rent_out',  rent_out.read);
+    
+    app.post('/session/create' ,  user.create);
+    app.post('/login' ,  user.login);
+    app.put('/coverage', auth , user.coverage);
+    app.get('/settings', auth , user.readProfile);
+    
     app.get('/auth/facebook' , passport.authenticate('facebook'));
     app.get('/auth/facebook/callback' , passport.authenticate('facebook',{
         successRedirect : '/release',
