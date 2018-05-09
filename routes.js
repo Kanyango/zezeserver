@@ -2,9 +2,9 @@
 
 var mongoose = require('mongoose');
 var config = require('./config');
-//var jwt = require('express-jwt');
-// var auth  = jwt({ secret : config.secret , userProperty: 'payload'});
-// var passport = require('./passport');
+var jwt = require('express-jwt');
+var auth  = jwt({ secret : config.secret , userProperty: 'payload'});
+var passport = require('./passport');
 var release    = require('./service/release');
 var asset    = require('./service/assets');
 var user     = require('./server/service/users');
