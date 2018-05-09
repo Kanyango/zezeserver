@@ -24,11 +24,12 @@ var user = {
 
 		var user = new req.app.db.models.User();
 
-		user.username = req.body.username;
+		user.username = req.body.email;
 		//user.email = req.body.email;
 		user.phone = req.body.phone;
+		user.firstname = req.body.firstname;
+		user.lastname = req.body.lastname;
 		//user.location =  req.body.location;
-		user.bname =  req.body.bname;
 		user.setPassword(req.body.password)
 
 		user.save(function(err){
