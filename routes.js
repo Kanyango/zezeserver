@@ -7,7 +7,7 @@ var auth  = jwt({ secret : config.secret , userProperty: 'payload'});
 var passport = require('./passport');
 var release    = require('./service/release');
 var asset    = require('./service/assets');
-var user     = require('./server/service/users');
+var user     = require('./service/users');
 
 module.exports = function(app , passport)
 {
