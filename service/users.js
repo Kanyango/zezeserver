@@ -22,25 +22,25 @@ var user = {
 				}
 			});
 
-		var user = new req.app.db.models.User();
+			var user = new req.app.db.models.User();
 
-		user.username = req.body.email;
-		//user.email = req.body.email;
-		user.phone = req.body.phone;
-		user.firstname = req.body.firstname;
-		user.lastname = req.body.lastname;
-		//user.location =  req.body.location;
-		user.setPassword(req.body.password)
+			user.username = req.body.email;
+			//user.email = req.body.email;
+			user.phone = req.body.phone;
+			user.firstname = req.body.firstname;
+			user.lastname = req.body.lastname;
+			//user.location =  req.body.location;
+			user.setPassword(req.body.password)
 
-		user.save(function(err){
-			if(err)
-			{
-				return next(err);
-			}
+			user.save(function(err){
+				if(err)
+				{
+					return next(err);
+				}
 
-			return res.json({token: user.generateJwt()})
-		});
-  },
+				return res.json({token: user.generateJwt()})
+			});
+	  },
 
 	login : function(req , res , next)
 	{
@@ -102,21 +102,21 @@ var user = {
 	 			res.status(200).json(docs);
 	 		});
 	},
-	readProfile : function(req  , res , next)
+	/*readProfile : function(req  , res , next)
 	{
-		 if(!req.payload._id){
-            res.status(401).json({
-                "message" : "Unauthorized"
-            });
-        }
-        else{
+	     if(!req.payload._id){
+		    res.status(401).json({
+			"message" : "Unauthorized"
+		    });
+		}
+		else{
 
-         req.app.db.models.User.findById(req.payload._id)
-            .exec(function(err , user){
-                res.status(200).json(user);
-            });
-        }
-	},
+		 req.app.db.models.User.findById(req.payload._id)
+		    .exec(function(err , user){
+			res.status(200).json(user);
+		    });
+		}
+	},*/
 	settings  : function(req , res , next)
 	{
 		req.app.db.models.User.findById(req.payload._id , 
