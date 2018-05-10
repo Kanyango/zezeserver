@@ -33,7 +33,7 @@ module.exports = function(app , passport)
     app.post('/session/create' ,  user.create);
     app.post('/login' ,  user.login);
     app.put('/coverage', auth , user.coverage);
-    app.get('/settings', auth , user.readProfile);
+    //app.get('/settings', auth , user.readProfile);
     
     app.get('/auth/facebook' , passport.authenticate('facebook'));
     app.get('/auth/facebook/callback' , passport.authenticate('facebook',{
