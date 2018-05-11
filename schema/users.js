@@ -42,11 +42,11 @@ module.exports = function(app , mongoose)
 		this.hash = crypto.pbkdf2Sync(password , this.salt , 1000 , 64, 'sha512').toString('hex');
 	};
 	userSchema.methods.validatePassword = function(password) {
-     var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+     var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
      return this.hash === hash;
    };
 	userSchema.methods.generateJwt  =  function(){
- 'sha512'
+
 		var today = new Date();
 		var exp = new Date(today);
         exp.setDate(today.getDate() + 60);
