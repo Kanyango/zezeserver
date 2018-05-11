@@ -24,7 +24,7 @@ var user = {
 
 			var user = new req.app.db.models.User();
 
-			user.username = req.body.email;
+			user.username = req.body.username;
 			//user.email = req.body.email;
 			user.phone = req.body.phone;
 			user.firstname = req.body.firstname;
